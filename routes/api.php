@@ -15,3 +15,8 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::get('events', 'EventsController@index');
+Route::post('events', 'EventsController@store');
+Route::patch('events/{id}', 'EventsController@update');
+Route::delete('events/{id}', 'EventsController@destroy');
