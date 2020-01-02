@@ -14,11 +14,11 @@
 Route::get('/', function () {
 
 	$users = array(
-		'section' => 'Users',
+		'section' => 'Auth',
 		'endpoints' => array(
 			array(
 				'name' => 'Login',
-				'url' => '/api/auth/login',
+				'url' => 'POST /api/auth/login',
 				'payload' => '{
 					email: [string],
 					password: [string]
@@ -31,31 +31,31 @@ Route::get('/', function () {
 			),
 			array(
 				'name' => 'Update User',
-				'url' => '/api/auth/update',
+				'url' => 'PATCH /api/auth/update',
 				'payload' => '',
 				'returns' => '',
-				'explain' => ''
+				'explain' => 'Updates the logged in user'
 			),
 			array(
 				'name' => 'Register',
-				'url' => '/api/auth/register',
+				'url' => 'POST /api/auth/register',
 				'payload' => '',
 				'returns' => '',
-				'explain' => ''
+				'explain' => 'Registers a new user'
 			),
 			array(
 				'name' => 'Get logged in user',
-				'url' => '/api/auth/me',
+				'url' => 'POST /api/auth/me',
 				'payload' => '',
 				'returns' => '',
 				'explain' => ''
 			),
 			array(
 				'name' => 'Logout',
-				'url' => '/api/auth/logout',
+				'url' => 'POST /api/auth/logout',
 				'payload' => '',
 				'returns' => '',
-				'explain' => ''
+				'explain' => 'Logs the user out'
 			)
 		)
 	);

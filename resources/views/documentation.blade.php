@@ -46,24 +46,23 @@
 
             <div class="container">
 
-                <div class="api-feature">
-                    <h2>Users</h2>
-                    <div class="endpoint">
-                        <p class="endpoint__url">POST /auth/login</p>
-                        <code class="endpoint__payload"></code>
-                        <p class="endpoint__explain"></p>
-                    </div>
-                    <div class="endpoint">
-                        <p class="endpoint__url">PATCH /auth/update</p>
-                        <code class="endpoint__payload"></code>
-                        <p class="endpoint__explain">explaintion jd cd jc dhjvdf</p>
-                    </div>
-                </div>
+                @foreach($docs as $doc)
+            
+                    <div class="api-feature">
+                        <h2>{{ $doc['section'] }}</h2>
 
-                <div class="api-feature">
-                    <h2>Events</h2>
+                        @foreach($doc['endpoints'] as $endpoint)
+                            <div class="endpoint">
+                                <p class="endpoint__name">{{ $endpoint['name'] }}</p>
+                                <p class="endpoint__url">{{ $endpoint['url'] }}</p>
+                                <code class="endpoint__payload">{{ $endpoint['payload'] }}</code>
+                                <p class="endpoint__explain">{{ $endpoint['explain'] }}</p>
+                            </div>
+                        @endforeach
+                    
+                    </div>
 
-                </div>
+                @endforeach
 
             </div>
 
