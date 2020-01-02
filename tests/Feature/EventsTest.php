@@ -40,6 +40,42 @@ class EventsTest extends TestCase
     }
 
     /** @test */
+    public function events_will_be_paginated()
+    {
+        $user = factory(User::class)->create();
+        factory(Event::class, 20)->create([
+            'user_id' => $user->id,
+            'tour_id' => null
+        ]);
+
+        $response = $this->actingAs($user, 'api')
+            ->get('/api/events');
+
+        $response->assertOk()
+                ->assertJsonCount(10, 'events');
+    }
+
+    // FILTERS
+
+    /** @test */
+    public function user_can_filter_by_past_events()
+    {
+        
+    }
+
+    /** @test */
+    public function user_can_filter_by_future_events()
+    {
+        
+    }
+
+    /** @test */
+    public function user_can_filter_between_two_dates()
+    {
+        
+    }
+
+    /** @test */
     public function an_event_can_be_added()
     {
         $user = factory(User::class)->create();
