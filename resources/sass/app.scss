@@ -1,1 +1,42 @@
-//
+body {
+	background: #efefef;
+}
+
+.container {
+	max-width: 900px;
+}
+
+.doc-side {
+	background: #fff;
+	width: 250px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	padding-top: 20px;
+}
+
+.main-section {
+	margin-left: 250px;
+	padding-top: 64px;
+}
+
+.list-features {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	&__top {
+	    margin: 0px 0px 6px 0px;
+	}
+	&__sub_ul {
+		list-style: none;
+		padding: 0px;
+		margin: 0px 0px 12px 0px;
+		li {
+			font-size: 14px;
+		}
+	}
+	li {
+		padding: 0px 20px;
+	}
+}
